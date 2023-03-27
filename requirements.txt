@@ -4,6 +4,7 @@ streamlit
 openai-async
 asyncio
 nest-asyncio
+python-dotenv
 nltk
 openai
 # torch==1.13.1+cu116
