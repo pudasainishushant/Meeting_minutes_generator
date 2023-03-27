@@ -45,7 +45,7 @@ def generate_summary(filename):
     chunks = break_up_file_to_chunks(filename)
     for i, chunk in enumerate(chunks):
         prompt_request = "Summarize this meeting transcript: " + convert_to_prompt_text(chunks[i])
-
+        
         response = openai.Completion.create(
                 model="text-davinci-003",
                 prompt=prompt_request,
@@ -55,13 +55,13 @@ def generate_summary(filename):
                 frequency_penalty=0,
                 presence_penalty=0
         )
-
+        # breakpoint()
         prompt_response.append(response["choices"][0]["text"])
 
-        summary = prompt_response
-        # print("Summary",summary)
+        # summary = prompt_response
+        # # print("Summary",summary)
 
-
+    
     prompt_request = "Consoloidate these meeting summaries: " + str(prompt_response)
 
     response = openai.Completion.create(
