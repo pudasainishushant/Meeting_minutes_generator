@@ -6,8 +6,8 @@ from nltk.tokenize import word_tokenize
 
 load_dotenv()
 
-#openai.api_key = os.getenv("api_key")
-openai.api_key = "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"
+openai.api_key = os.getenv("api_key")
+
 filename = "sample_meeting.txt"
 
 def count_tokens(filename):
